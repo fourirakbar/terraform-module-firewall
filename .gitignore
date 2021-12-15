@@ -1,0 +1,27 @@
+# ignore .env file
+.env
+*/**/.env
+
+# ignore .terraform folders
+.terraform
+*/**/.terraform
+
+# ignore .terragrunt-cache folders
+.terragrunt-cache
+*/**/.terragrunt-cache
+
+# ignore terraform.tfvars file
+terraform.tfvars
+*/**/terraform.tfvars
+
+# ignore terraform
+terraform.tfstate
+terraform.tfstate.backup
+*/**/terraform.tfstate
+*/**/terraform.tfstate.backup
+
+# ignore IntelliJ IDEA
+.idea
+
+# ignore apple macos operation system .DS_Store
+.DS_Store

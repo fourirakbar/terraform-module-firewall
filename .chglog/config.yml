@@ -1,0 +1,25 @@
+style: bitbucket
+template: CHANGELOG.tpl.md
+info:
+  title: CHANGELOG
+  repository_url: https://bitbucket.org/finaccelteam/terraform-modules-gcp-firewall/src/master/
+options:
+  commits:
+    filters:
+      Type:
+        - feat
+        - fix
+        - BREAKING
+  commit_groups:
+    title_maps:
+      feat: Features
+      fix: Fixes
+      BREAKING: BREAKING CHANGES
+  header:
+    pattern: "^(\\w*)\\:\\s(.*)$"
+    pattern_maps:
+      - Type
+      - Subject
+  notes:
+    keywords:
+      - BREAKING CHANGE

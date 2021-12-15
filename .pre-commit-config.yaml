@@ -1,0 +1,31 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.3.0
+    hooks:
+      - id: check-merge-conflict    # Check for files that contain merge conflict strings
+      - id: trailing-whitespace     # This hook trims trailing whitespace
+      - id: end-of-file-fixer       # Ensures that a file is either empty, or ends with one newline
+      - id: detect-private-key      # Detects the presence of private keys
+      - id: check-json              # This hook checks json files for parseable syntax
+      - id: check-yaml              # This hook checks yaml files for parseable syntax
+      - id: detect-aws-credentials  # Detects *your* aws credentials from the aws cli credentials file
+        args:
+          - --allow-missing-credentials
+      - id: no-commit-to-branch     # Don't commit to branch
+        args:
+          - --branch=master
+
+  - repo: https://github.com/gruntwork-io/pre-commit
+    rev: v0.1.10
+    hooks:
+      - id: gofmt               # Automatically run gofmt on all Golang code (*.go files)
+      - id: golint              # Automatically run golint on all Golang code (*.go files)
+      - id: terraform-fmt       # Automatically run terraform fmt on all Terraform code (*.tf files)
+      - id: terraform-validate  # Automatically run terraform validate on all Terraform code (*.tf files)
+      - id: tflint              # Automatically run tflint on all Terraform code (*.tf files)
+      - id: terragrunt-hclfmt   # Automatically run terragrunt hclfmt on all Terragrunt configurations
+
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.44.0
+    hooks:
+      - id: terraform_docs # Generate terraform documentation inside README.md
